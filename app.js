@@ -13,7 +13,11 @@ app.use("/books", router); // localhost:5000/books
 
 mongoose
     .connect(
-        `mongodb+srv://admin:123@bookshop.n3wfgga.mongodb.net/?retryWrites=true&w=majority`
+        `mongodb+srv://admin:123@bookshop.n3wfgga.mongodb.net/?retryWrites=true&w=majority`,
+        {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+          },
     )
     .then(() => console.log("Connected to Database"))
     .then(() => {
